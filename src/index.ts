@@ -36,7 +36,7 @@ export class Fortnox {
             Defaults: defaults,
         });
         this.articles = new Articles(dispatch);
-        this.costcenter = new CostCenters(dispatch);
+        this.costcenters = new CostCenters(dispatch);
         this.customers = new Customers(dispatch);
         this.invoices = new Invoices(dispatch);
         this.supplierInvoices = new SupplierInvoices(dispatch);
@@ -45,7 +45,7 @@ export class Fortnox {
     }
 
     public articles: Articles;
-    public costcenter: CostCenters;
+    public costcenters: CostCenters;
     public customers: Customers;
     public invoices: Invoices;
     public supplierInvoices: SupplierInvoices;

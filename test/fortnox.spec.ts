@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import { FNArticle } from '../src/types/FNArticle';
+import { FNCostCenter } from '../src/types/FNCostCenter';
 import { FNCustomer } from '../src/types/FNCustomer';
 import { FNSupplierInvoice } from '../src/types/FNSupplierInvoice';
 import { FNPrice } from '../src/types/FNPrice';

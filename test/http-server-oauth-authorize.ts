@@ -1,6 +1,6 @@
 import http from 'http';
 import fetch from 'node-fetch';
-import config from './fnConfig.json';
+import config from './fnConfig_sample.json';
 
 /**
  * Simple server to get authorization code from Fortnox using OAuth2 (now it is the only supported method for the new apps)
@@ -18,7 +18,7 @@ import config from './fnConfig.json';
 
 const host = 'localhost';
 const port = 3333;
-const scope = 'article customer price invoice supplier supplierinvoice';
+const scope = 'article customer costcenter price invoice supplier supplierinvoice';
 
 const redirect_uri = `http://${host}:${port}/authorize`;
 
