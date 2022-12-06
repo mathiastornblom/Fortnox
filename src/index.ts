@@ -1,4 +1,5 @@
 import { Articles } from './articles';
+import { Accounts } from './accounts';
 import { CostCenters } from './costcenters';
 import { Customers } from './customers';
 import { Invoices } from './invoices';
@@ -36,6 +37,7 @@ export class Fortnox {
             Defaults: defaults,
         });
         this.articles = new Articles(dispatch);
+        this.accounts = new Accounts(dispatch);
         this.costcenters = new CostCenters(dispatch);
         this.customers = new Customers(dispatch);
         this.invoices = new Invoices(dispatch);
@@ -45,6 +47,7 @@ export class Fortnox {
     }
 
     public articles: Articles;
+    public accounts: Accounts;
     public costcenters: CostCenters;
     public customers: Customers;
     public invoices: Invoices;
