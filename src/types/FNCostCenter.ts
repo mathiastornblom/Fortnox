@@ -7,8 +7,9 @@ export type CostCenter = {
 };
 
 export type CostCenterClass = {
-    Code?: 'string';
-    Description?: 'string';
-    Note?: 'string';
+    '@url': string;
+    Code?: string;
+    Description?: string;
+    Note?: string;
     Active?: boolean;
 };
