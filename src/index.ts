@@ -1,31 +1,42 @@
 import { Articles } from './articles';
+import { CostCenters } from './costcenters';
 import { Customers } from './customers';
 import { Invoices } from './invoices';
 import { Prices } from './prices';
-import { SupplierInvoices } from './supplierinvoices'
+import { SupplierInvoices } from './supplierinvoices';
 import { Dispatch } from './dispatch';
 import { Suppliers } from './suppliers';
 import { Defaults } from './types/defaults';
 
 export class Fortnox {
     constructor(config: {
-        host: string,
-        bearerToken?: string,
-        clientSecret?: string,
-        accessToken?: string,
+        host: string;
+        bearerToken?: string;
+        clientSecret?: string;
+        accessToken?: string;
     }) {
         const defaults: Defaults = {
             json: true,
             headers: {
-                ...(config.bearerToken && { 'Authorization': `Bearer ${config.bearerToken}` }),
-                ...(config.clientSecret && { 'client-secret': config.clientSecret }),
-                ...(config.accessToken && { 'access-token': config.accessToken }),
+                ...(config.bearerToken && {
+                    Authorization: `Bearer ${config.bearerToken}`,
+                }),
+                ...(config.clientSecret && {
+                    'client-secret': config.clientSecret,
+                }),
+                ...(config.accessToken && {
+                    'access-token': config.accessToken,
+                }),
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        }
-        const dispatch = new Dispatch({ Host: config.host, Defaults: defaults });
+                Accept: 'application/json',
+            },
+        };
+        const dispatch = new Dispatch({
+            Host: config.host,
+            Defaults: defaults,
+        });
         this.articles = new Articles(dispatch);
+        this.costcenter = new CostCenters(dispatch);
         this.customers = new Customers(dispatch);
         this.invoices = new Invoices(dispatch);
         this.supplierInvoices = new SupplierInvoices(dispatch);
@@ -34,6 +45,7 @@ export class Fortnox {
     }
 
     public articles: Articles;
+    public costcenter: CostCenters;
     public customers: Customers;
     public invoices: Invoices;
     public supplierInvoices: SupplierInvoices;
