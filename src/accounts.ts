@@ -21,10 +21,10 @@ export class Accounts {
         return result.Account;
     }
 
-    async getAll(filter?: string) {
+    async getAll({ filter }: { filter?: string } = {}) {
         const result = (await Util.getAllPages(
             this.path,
-            'accounts',
+            'Accounts',
             this.dispatch,
             filter
         )) as FNAccount[];
@@ -40,7 +40,7 @@ export class Accounts {
 
     async update(Account: any) {
         const result = (await this.dispatch.put(
-            `${this.path}/${Account.AccountNumber}`,
+            `${this.path}/${Account.Number}`,
             { Account: Account }
         )) as AccountResult;
         return result.Account;
