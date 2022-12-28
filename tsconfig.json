@@ -1,31 +1,22 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "outDir": "./dist",
-    "sourceMap": true,
-    "module": "commonjs",
-    "declaration": true,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "strict": true,
-    "target": "esnext",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,  
-    "allowJs": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "esnext"
-    ]
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-      "node_modules",
-      "**/*.spec.ts"
-  ]  
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "module": "commonjs",
+        "declaration": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        //"suppressImplicitAnyIndexErrors": true,
+        "strict": true,
+        "target": "esnext",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowJs": false,
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["esnext"]
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
 }
